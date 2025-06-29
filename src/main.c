@@ -1194,21 +1194,19 @@ SH_DEF(ap_time)
 
 SH_DEF(ap_dbg_task)
 {
-	TaskStatus_t		*list;
-	int			len, symStat, n;
-
+	TaskStatus_t * list;
+	int	len, symStat, n;
 	len = uxTaskGetNumberOfTasks();
 	list = pvPortMalloc(len * sizeof(TaskStatus_t));
 
-	if (list != NULL) {
-
+	if (list != NULL)
+	{
 		len = uxTaskGetSystemState(list, len, NULL);
-
 		printf("TCB      ID Name              Stat Prio Stack    Free" EOL);
-
-		for (n = 0; n < len; ++n) {
-
-			switch (list[n].eCurrentState) {
+		for (n = 0; n < len; ++n)
+		{
+			switch (list[n].eCurrentState)
+			{
 
 				case eRunning:
 					symStat = 'R';
