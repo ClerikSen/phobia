@@ -92,6 +92,7 @@ typedef struct {
 	/* App enable/disable knobs.
 	 * */
 	int			task_AUTOSTART;
+	int			task_USER_APP;
 	int			task_BUTTON;
 	int			task_AS5047;
 	int			task_HX711;
