@@ -11,11 +11,11 @@
 /* The application allows you to startup PMC automatically at power up.
  * */
 
-LD_TASK void app_AUTOSTART(void *pData)
+LD_TASK void app_USER_APP(void *pData)
 {
-	volatile int		*lknob = (volatile int *) pData;
+	volatile int *lknob = (volatile int *) pData;
 
-	run_starter_generator(void *pData);
+	run_starter_generator(pData);
 
     vTaskDelete( NULL );
 }
