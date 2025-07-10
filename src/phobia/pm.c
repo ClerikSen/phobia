@@ -2375,6 +2375,7 @@ pm_lu_FSM(pmc_t *pm)
 	if (pm->lu_MODE == PM_LU_FORCED) {
 
 		pm->lu_mq_load = 0.f;
+		pm->lu_mq_load = pm_torque_maximal(pm, pm->forced_hold_D);
 	}
 	else {
 		float		mQ_load, wS_accel;
